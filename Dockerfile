@@ -1,15 +1,13 @@
-# 1️⃣ Build stage
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install
+RUN npm install --ignore-scripts
 
 COPY . .
 RUN npm run build
 
-# 2️⃣ Production stage
-FROM node:18-alpine
+FROM node:20-alpine
 WORKDIR /app
 
 ENV NODE_ENV=production
@@ -18,5 +16,5 @@ ENV PORT=8080
 COPY --from=builder /app ./
 
 EXPOSE 8080
-
 CMD ["npm", "start"]
+
