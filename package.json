@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "email": "email dev",
-    "postinstall": "prisma generate"
-  },
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start -p 8080",
+  "lint": "next lint",
+  "email": "email dev",
+  "postinstall": "prisma generate"
+},
+
   "dependencies": {
     "@arcjet/next": "^1.0.0-alpha.34",
     "@clerk/nextjs": "^6.6.0",
@@ -54,4 +55,5 @@
     "react-email": "3.0.3",
     "tailwindcss": "^3.4.1"
   }
+
 }
